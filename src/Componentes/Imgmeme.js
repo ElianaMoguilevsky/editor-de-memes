@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import html2canvas from 'html2canvas';
 import { Container, CardGroup, Card } from 'react-bootstrap';
 
 
@@ -30,6 +29,8 @@ const Imgmeme = () => {
     console.log(url);
     }
 
+    /* eslint-disable no-unused-vars */
+
     const handleTextColor1Change = (e) => {
       setTextColor1(e.target.value);
     };
@@ -37,6 +38,8 @@ const Imgmeme = () => {
     const handleTextColor2Change = (e) => {
       setTextColor2(e.target.value);
     };
+
+    /* eslint-disable no-unused-vars */
 
     const descarga = (e) => {
       const canvas = document.createElement("canvas");
