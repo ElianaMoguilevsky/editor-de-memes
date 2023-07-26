@@ -29,6 +29,7 @@ body{
   .card {
     background-color: transparent;
     border: none;
+    
        
 }
 
@@ -47,14 +48,26 @@ img {
 }
 
 .texto {
-  margin: 78px!important;
-  justify-content: center!important;
+  width: 300px;
   word-break: break-all;
-  align-content: center;
+  left: 50%; 
+  transform: translateX(-50%);
 }
 
+.Carousel__Container-sc-hyhecw-0 {
+  height: 200px;
+    }
 
+.imgFigure {
+  max-height: 500px;
+  max-width: fit-content;
+  
+}
 
+.Carousel__Item-sc-hyhecw-5 {
+  max-height: 200px;
+  max-width: fit-content;
+}
 
 
 

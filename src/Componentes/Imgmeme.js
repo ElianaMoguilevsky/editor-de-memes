@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { Container, CardGroup, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import Carousel from 'better-react-carousel';
 
 
 
@@ -43,15 +44,15 @@ const Imgmeme = () => {
 
     const descarga = (e) => {
       const canvas = document.createElement("canvas");
-      canvas.width = 500; 
-      canvas.height = 500; 
       const ctx = canvas.getContext("2d");
     
       const img = new Image();
       img.crossOrigin = "anonymous";
       img.src = selectedImage;
       img.onload = () => {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      canvas.width = img.width; 
+      canvas.height = img.height; 
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     
     
         ctx.fillStyle = textColor1;
@@ -99,40 +100,34 @@ const Imgmeme = () => {
 
 
         <h2 className='mt-3 mb-3'>Elegí la imagen para tu meme</h2>
-
-        <CardGroup>
-      <Card>
-         <Container>
-
-          
-         <div className="mt-5 row row-cols-md-4 g-2">
-                {imgmeme.map(memes => (
-                   <div  className="col-md-2">
-                    <div className="card text-center">
-                      <img onClick={() => seleccionarImg(memes.url)} src={memes.url} alt="meme" style={{ cursor: 'pointer' }} />
-                    </div>
-            
-                  </div>
-                
-                ))}
-            </div>
-        </Container>  
-        </Card>
         
-        <Card>
-        <Container>
+        <Carousel cols={4} rows={1} gap={5} loop >
+        {imgmeme.map(memes => (
+        <Carousel.Item>
+              <img className="mt-4" width="100%" onClick={() => seleccionarImg(memes.url)} src={memes.url} alt="meme" style={{ cursor: 'pointer' }} />
+              </Carousel.Item>
+            ))}
+          
+       </Carousel>
+     
+
+
+   
+        
+       
+        <Card className='mt-5'>
          
         <figure className='text-center position-relative' id='exportar'>
-          <p className='texto position-absolute h2' style={{ color: textColor1 }}>{textomeme1}</p> 
-          <img crossOrigin='anonymous' src={`${selectedImage}`} className='figure-img mt-3 d-block m-auto w-75' alt='meme'/>
+          <p className='texto position-absolute h2 top-0 mt-3' style={{ color: textColor1 }}>{textomeme1}</p> 
+          <img crossOrigin='anonymous' src={`${selectedImage}`} className='imgFigure mt-3 d-block m-auto w-50' alt='meme'/>
           <p className='texto position-absolute bottom-0 h2' style={{ color: textColor2 }}>{textomeme2}</p>
         </figure>
 
-        <button onClick={descarga} type='button' className='btn justify-conten col-2 btn-primary mt-5 mb-4'>Descargar meme</button>
+        <button onClick={descarga} type='button' className='btn justify-conten mx-auto btn-primary mt-5 mb-4'>Descargar meme</button>
       
-        </Container>
+  
         </Card>
-        </CardGroup>
+    
         
         </div>
           )
