@@ -1,5 +1,6 @@
 import './App.css';
 import Imgmeme from "./Componentes/Imgmeme";
+import Footer from './Componentes/Footer';
 
 
 
@@ -10,7 +11,7 @@ function App() {
     <div className="App">
     
     <Imgmeme />
-    
+    <Footer />
    
 
   

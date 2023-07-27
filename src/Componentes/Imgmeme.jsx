@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { Card } from 'react-bootstrap';
 import Carousel from 'better-react-carousel';
 
-
-
 const Imgmeme = () => {
 
     const [textomeme1, setTextomeme1] = useState();
@@ -12,6 +10,7 @@ const Imgmeme = () => {
     const [selectedImage, setSelectedImage] = useState();
     const [textColor1, setTextColor1] = useState('#FF5733');
     const [textColor2, setTextColor2] = useState('#9BF018');
+    
     
    
     const textmeme1 = (e) =>{
@@ -60,15 +59,16 @@ const Imgmeme = () => {
         ctx.font = "30px Arial"; 
         ctx.fillText(textomeme1, canvas.width / 2, 50);
     
-        
         ctx.fillStyle = textColor2;
         ctx.fillText(textomeme2, canvas.width / 2, canvas.height - 50);
-    
+
         let link = document.createElement("a");
         link.download = "meme.jpg";
         link.href = canvas.toDataURL("image/jpeg"); 
         link.click();
+        
       };
+
     };
         
 
@@ -128,8 +128,7 @@ const Imgmeme = () => {
   
         </Card>
     
-        
-        </div>
+         </div>
           )
          
 }
