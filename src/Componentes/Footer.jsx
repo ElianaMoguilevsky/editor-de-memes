@@ -4,14 +4,12 @@ import { MDBFooter, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 export default function Footer() {
   return (
     <MDBFooter bgColor='light' className='text-center text-sm-start text-muted'>
+      
       <section className='d-flex justify-content-center justify-content-sm-between p-4 border-bottom'>
-        <div className='me-5 d-none d-sm-block'>
        
-          <div className='mt-2'>
-        © 2023 Eliana Moguilevsky
-
-      </div>
-        </div>
+       
+             <p> © 2023 Eliana Moguilevsky</p>
+ 
 
         <div>
 

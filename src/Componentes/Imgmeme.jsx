@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Placeholder } from 'react-bootstrap';
 import Carousel from 'better-react-carousel';
 
 const Imgmeme = () => {
@@ -12,7 +12,7 @@ const Imgmeme = () => {
     const [textColor2, setTextColor2] = useState('#9BF018');
     
     
-   
+    
     const textmeme1 = (e) =>{
         setTextomeme1(e.target.value);
         console.log(e.target.value);
@@ -104,18 +104,15 @@ const Imgmeme = () => {
         <Carousel cols={4} rows={1} gap={5} loop >
         {imgmeme.map(memes => (
         <Carousel.Item>
-              <img className="mt-4" width="100%" onClick={() => seleccionarImg(memes.url)} src={memes.url} alt="meme" style={{ cursor: 'pointer' }} />
+              <img className="img-carousel" width="100%" onClick={() => seleccionarImg(memes.url)} src={memes.url} alt="meme" style={{ cursor: 'pointer' }} />
               </Carousel.Item>
             ))}
           
        </Carousel>
      
-
-
-   
-        
        
-        <Card className='mt-5'>
+       
+        <Card className=''>
          
         <figure className='text-center position-relative' id='exportar'>
           <p className='texto position-absolute h2 top-0 mt-3' style={{ color: textColor1 }}>{textomeme1}</p> 
